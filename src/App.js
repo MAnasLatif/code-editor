@@ -1,10 +1,11 @@
+import React from 'react'
 import { Toaster } from 'react-hot-toast';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import EditorPage from './pages/EditorPage';
 import Home from './pages/Home';
 
-function App() {
+export default function App() {
   return (
     <>
       <div>
@@ -26,7 +27,5 @@ function App() {
         </Routes>
       </BrowserRouter>
     </>
-  );
+  )
 }
-
-export default App;

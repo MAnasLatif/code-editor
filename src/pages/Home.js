@@ -28,14 +28,33 @@ export default function Home() {
         })
     }
 
+    const handleInputEnter = (e) => {
+        if (e.code === 'Enter') {
+            joinRoom();
+        }
+    };
+
     return (
         <div className="homePageWrapper">
             <div className="formWrapper">
                 <img className='logo' src="/code-sync.png" alt="code-sync-logo" />
                 <h4 className="mainLabel">Paste invitation ROOM ID</h4>
                 <div className="inputGroup">
-                    <input value={roomID} onChange={(e) => setroomID(e.target.value)} type="text" className='inputBox' placeholder='ROOM ID' />
-                    <input value={userName} onChange={(e) => setuserName(e.target.value)} type="text" className="inputBox" placeholder='USERNAME' />
+                    <input
+                        value={roomID}
+                        onChange={(e) => setroomID(e.target.value)}
+                        type="text" className='inputBox'
+                        placeholder='ROOM ID'
+                        onKeyUp={handleInputEnter}
+                    />
+                    <input
+                        value={userName}
+                        onChange={(e) => setuserName(e.target.value)}
+                        type="text"
+                        className="inputBox"
+                        placeholder='USERNAME'
+                        onKeyUp={handleInputEnter}
+                    />
                     <button className="btn joinBtn" onClick={joinRoom}>Join</button>
                     <span className='createTnfo'>
                         If you don't have an invite then create &nbsp;
